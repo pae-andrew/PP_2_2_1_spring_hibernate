@@ -18,14 +18,14 @@ public class MainApp {
       UserService userService = context.getBean(UserService.class);
       CarService carService = context.getBean(CarService.class);
 
-      carService.add(new Car("BMW", 3));
-      carService.add(new Car("Ford focus", 2));
-      userService.add(new User("User1", "Lastname1", "user1@mail.ru"));
-      userService.add(new User("User2", "Lastname2", "user2@mail.ru"));
-      userService.add(new User("User3", "Lastname3", "user3@mail.ru",
-              carService.getCarByModelAndSeries("BMW", 3)));
-      userService.add(new User("User4", "Lastname4", "user4@mail.ru",
-              carService.getCarByModelAndSeries("Ford focus", 2)));
+//      carService.add(new Car("BMW", 3));
+//      carService.add(new Car("Ford focus", 2));
+//      userService.add(new User("User1", "Lastname1", "user1@mail.ru"));
+//      userService.add(new User("User2", "Lastname2", "user2@mail.ru"));
+//      userService.add(new User("User3", "Lastname3", "user3@mail.ru",
+//              carService.getCarByModelAndSeries("BMW", 3)));
+//      userService.add(new User("User4", "Lastname4", "user4@mail.ru",
+//              carService.getCarByModelAndSeries("Ford focus", 2)));
 
       List<User> users = userService.listUsers();
       for (User user : users) {
@@ -39,7 +39,7 @@ public class MainApp {
       Car car = carService.getCarByModelAndSeries("BMW", 3);
       System.out.println(car.getSeries());
 
-      User user = userService.getUserByCar("BMW", 3);
+      User user = userService.getUserByCar("Ford focus", 2);
       System.out.println(user.toString());
 
       context.close();
